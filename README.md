@@ -1,0 +1,2 @@
+# Segurança Viária em Foco - Análise de Acidentes nas Rodovias Federais
+Este site está sendo desenvolvido como parte da disciplina de Desenvolvimento para a Web do curso de Tecnologia em Banco de Dados da Universidade Federal do Cariri - UFCA
