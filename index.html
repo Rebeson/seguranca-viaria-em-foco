@@ -2,42 +2,111 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="Segurança Viária em Foco" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Segurança Viária em Foco</title>
-
-    <!-- Arquivo CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
-    <h1>
-        Segurança Viária em Foco
-    </h1>
-    <h2>
-        Investigação dos Fatores Causais e da Severidade dos Acidentes nas Rodovias Federais 
-        Brasileiras em 2025
-    </h2>
-<nav>
-    <ul>
-        <button><a href="index.html"
-            title="Ir para a página inicial">Início</a></button>
-        <button><a href="pages/sobre.html"
-            title="Conhecer quem somos">Sobre</a></button>
-        <button><a href="pages/produtos.html"
-            title="Ir para a página de produtos">Produtos</a></button>
-        <button><a href="pages/contato.html"
-            title="Ir para a página de contatos">Contato</a></button>
-    </ul>
-</nav>
-
-
 <body>
 
+    <header>
+        <div class="container header-content">
+            <h1>Segurança Viária em Foco</h1>
+            <p>Investigação dos Fatores Causais e da Severidade dos Acidentes nas Rodovias Federais Brasileiras em 2025</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="container">
+            <li><a href="#home">Página Inicial</a></li>
+            <li><a href="#dashboards">Painel de Dados</a></li>
+            <li><a href="#ranking">Ranking de Risco</a></li>
+            <li><a href="#metodologia">Metodologia</a></li>
+            <li><a href="#equipe">Sobre a Equipe</a></li>
+            <li><a href="#contato">Fale Conosco</a></li>
+        </ul>
+    </nav>
+
+
+    <main class="container">
+   
+        <section id="home">
+            <h2>Apresentação do Projeto</h2>
+            <article>
+                <h3>Objetivo</h3>
+                <p>Investigar a dinâmica, a severidade e os fatores causais dos acidentes automobilísticos nas rodovias federais brasileiras no ano de 2025, utilizando técnicas de Análise Exploratória de Dados (EDA) para extrair padrões de risco e fornecer subsídios para estratégias de segurança viária.</p>
+            </article>
+        </section>
+
+        <section id="dashboards">
+            <h2>Painel de Dados (Dashboards)</h2>
+            
+            <div class="grid-layout">
+                <article class="card">
+                    <h3>Severidade dos Acidentes</h3>
+                    <p>Comparativo direto entre a proporção de vítimas feridas vs. vítimas fatais nas ocorrências registradas em 2025.</p>
+                    <!-- Inserir o Dashboard aqui -->
+                </article>
+
+                <article class="card">
+                    <h3>Fatores Contribuintes</h3>
+                    <ul>
+                        <li><strong>Meteorologia:</strong> Análise de incidência sob Céu Claro x Chuva.</li>
+                        <li><strong>Temporalidade:</strong> Identificação de horários de pico (ex: maior incidência entre 17h e 21h).</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="ranking">
+            <h2>Ranking de Risco Rodoviário</h2>
+            <p>Com base no Índice Comparativo de Risco focado na letalidade de trechos rodoviários, destacamos os quilômetros mais perigosos do Brasil para direcionar ações de fiscalização preventiva e engenharia de tráfego.</p>
+            
+            <aside class="highlight-box">
+                <h3>Trechos em Alerta Máximo (2025)</h3>
+                <ol>
+                    <li><strong>BR-423 (PE):</strong> Alta incidência de acidentes graves.</li>
+                    <li><strong>BR-163 (MT):</strong> Risco elevado ligado ao escoamento de produção.</li>
+                    <li><strong>BR-101:</strong> Diversos trechos com altos índices de letalidade ao longo da costa.</li>
+                </ol>
+            </aside>
+        </section>
+
+        <section id="metodologia">
+            <h2>Metodologia e Dados Abertos</h2>
+            <p>Espaço detalhando o processo de coleta, tratamento e limpeza do dataset "Acidentes 2025" da PRF. 
+            Explicará a exclusão de ruídos e o algoritmo de pontuação de severidade.</p>
+        </section>
+
+        <section id="equipe">
+            <h2>Sobre a Equipe</h2>
+            <p>Somos um grupo formado por 4 estudantes do curso de Tecnologia em Banco de Dados. 
+            Com imenso apoio do Prof. Dr. Jayr Alencar Pereira decidimos iniciar este projeto no qual iremos colocar em
+            prática os nossos conhecimentos em desenvolvimento Web utilizando HTLM, CSS, JavaScript e versionamento em Git.</p>
+            <div class="team-grid">
+                <div class="team-member">Analiny Bezerra da Silva</div>
+                <div class="team-member">Hailton Silva Thé Neto</div>
+                <div class="team-member">Rafael Pereira da Silva</div>
+                <div class="team-member">Rebeson Oliveira Vitalino</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contato">
+        <div class="container">
+            <h2>Fale Conosco</h2>
+            <p>Gestores públicos, autoridades de trânsito (PRF, DNIT) e pesquisadores: entrem em contato para sugestões ou para replicar nosso modelo de Ciência de Dados.</p>
+            
+            <form action="#" class="contact-form">
+                <input type="text" placeholder="Seu Nome / Instituição" required>
+                <input type="email" placeholder="Seu E-mail institucional" required>
+                <textarea rows="4" placeholder="Sua mensagem ou interesse no projeto..." required></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+            
+            <p class="copyright">© 2026 Projeto Segurança Viária em Foco. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
 </body>
-<footer>
-    <p>
-        Em desenvolcimento por 
-        <span>[NOME DA EQUIPE]</span>
-    </p>
-    <small>© 2026 [NOME DA EQUIPE]. Todos os direitos reservados.</small>
-</footer>
 </html>
