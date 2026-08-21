@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mapa de Acidentes | Segurança Viária em Foco</title>
+
+    <!-- CSS principal do projeto -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+<!-- Leaflet -->
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+>
+
+<!-- Leaflet MarkerCluster -->
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+>
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         CABEÇALHO
+         ========================================== -->
+
+    <header>
+
+        <div class="container header-content">
+
+            <h1>
+                Mapa de Acidentes
+            </h1>
+
+            <p>
+                Distribuição espacial dos acidentes
+                registrados nas rodovias federais em 2025
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         MENU
+         ========================================== -->
+
+    <nav>
+
+        <ul class="container">
+
+            <li>
+                <a href="index.html">
+                    Página Inicial
+                </a>
+            </li>
+
+            <li>
+                <a href="mapa.html">
+                    Mapa de Acidentes
+                </a>
+            </li>
+            
+            <li>
+                <a href="index.html#dashboards">
+                    Painel de Dados
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#ranking">
+                    Ranking de Risco
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#metodologia">
+                    Metodologia
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#equipe">
+                    Sobre a Equipe
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#contato">
+                    Fale Conosco
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ==========================================
+         CONTEÚDO DO MAPA
+         ========================================== -->
+
+    <main class="mapa-main">
+
+        <section class="mapa-section">
+
+            <div class="mapa-header">
+
+                <div>
+
+                    <h2>
+                        Mapa de Acidentes Rodoviários
+                    </h2>
+
+                    <p>
+                        Explore a localização dos acidentes
+                        registrados pela PRF em 2025.
+                    </p>
+
+                </div>
+
+                <div class="mapa-contador">
+
+                    <strong id="totalAcidentes">
+                        0
+                    </strong>
+
+                    <span>
+                        acidentes
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================
+                 ÁREA PRINCIPAL
+                 ================================== -->
+
+            <div class="mapa-layout">
+
+
+                <!-- ==============================
+                     PAINEL DE FILTROS
+                     ============================== -->
+
+                <aside class="mapa-filtros">
+
+                    <h3>
+                        Filtros
+                    </h3>
+
+
+                    <!-- Estado -->
+
+                    <div class="filtro-grupo">
+
+                        <label for="filtroUF">
+                            Estado
+                        </label>
+
+                        <select id="filtroUF">
+
+                            <option value="todos">
+                                Todos os estados
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Rodovia -->
+
+                    <div class="filtro-grupo">
+
+                        <label for="filtroBR">
+                            Rodovia
+                        </label>
+
+                        <select id="filtroBR">
+
+                            <option value="todos">
+                                Todas as rodovias
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Gravidade -->
+
+                    <div class="filtro-grupo">
+
+                        <label for="filtroGravidade">
+                            Gravidade
+                        </label>
+
+                        <select id="filtroGravidade">
+
+                            <option value="todos">
+                                Todas
+                            </option>
+
+                            <option value="Sem vítimas">
+                                Sem vítimas
+                            </option>
+
+                            <option value="Leve">
+                                Leve
+                            </option>
+
+                            <option value="Grave">
+                                Grave
+                            </option>
+
+                            <option value="Fatal">
+                                Fatal
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Botão -->
+
+                    <button
+                        id="btnLimpar"
+                        class="btn-filtro"
+                    >
+                        Limpar filtros
+                    </button>
+
+
+                    <!-- Legenda -->
+
+                    <div class="mapa-legenda">
+
+                        <h4>
+                            Gravidade
+                        </h4>
+
+                        <div>
+                            <span class="legenda-ponto sem-vitimas"></span>
+                            Sem vítimas
+                        </div>
+
+                        <div>
+                            <span class="legenda-ponto leve"></span>
+                            Leve
+                        </div>
+
+                        <div>
+                            <span class="legenda-ponto grave"></span>
+                            Grave
+                        </div>
+
+                        <div>
+                            <span class="legenda-ponto fatal"></span>
+                            Fatal
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- ==============================
+                     MAPA
+                     ============================== -->
+
+                <div
+                    id="mapa"
+                    class="mapa-container"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         RODAPÉ
+         ========================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <h2>
+                Segurança Viária em Foco
+            </h2>
+
+            <p>
+                Projeto acadêmico de análise dos acidentes
+                registrados nas rodovias federais brasileiras
+                em 2025.
+            </p>
+
+            <p class="copyright">
+                © 2026 Projeto Segurança Viária em Foco.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==========================================
+         LEAFLET
+         ========================================== -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <script
+        src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js">
+    </script>
+
+    <script src="js/mapa.js"></script>
+
+</body>
+
+</html>

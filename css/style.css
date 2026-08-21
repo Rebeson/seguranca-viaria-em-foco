@@ -243,3 +243,262 @@ footer h2 {
         flex: 1;
     }
 }
+
+
+/* =========================================================
+   MAPA DE ACIDENTES
+   ========================================================= */
+
+.mapa-main {
+    padding: 2rem 1.5rem;
+}
+
+.mapa-section {
+    padding: 1.5rem;
+}
+
+.mapa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.mapa-header h2 {
+    margin-bottom: 0.5rem;
+}
+
+.mapa-header p {
+    color: var(--text-light);
+}
+
+.mapa-contador {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 150px;
+}
+
+.mapa-contador strong {
+    display: block;
+    font-size: 1.8rem;
+}
+
+.mapa-contador span {
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
+.mapa-layout {
+    display: flex;
+    gap: 1.5rem;
+    min-height: 650px;
+}
+
+
+/* =========================================================
+   FILTROS
+   ========================================================= */
+
+.mapa-filtros {
+    width: 250px;
+    flex-shrink: 0;
+
+    background-color: var(--bg-light);
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 8px;
+
+    padding: 1.5rem;
+}
+
+.mapa-filtros h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.filtro-grupo {
+    margin-bottom: 1.2rem;
+}
+
+.filtro-grupo label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 0.4rem;
+
+    color: var(--text-dark);
+}
+
+.filtro-grupo select {
+    width: 100%;
+
+    padding: 0.7rem;
+
+    border: 1px solid #cbd5e0;
+
+    border-radius: 4px;
+
+    background-color: var(--white);
+
+    color: var(--text-dark);
+
+    font-family: inherit;
+}
+
+.btn-filtro {
+    width: 100%;
+
+    padding: 0.8rem;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background-color: var(--accent-gold);
+
+    color: var(--text-dark);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s;
+}
+
+.btn-filtro:hover {
+    background-color: #b7791f;
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   LEGENDA
+   ========================================================= */
+
+.mapa-legenda {
+    margin-top: 2rem;
+
+    padding-top: 1.5rem;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+.mapa-legenda h4 {
+    margin-bottom: 1rem;
+
+    color: var(--primary-blue);
+}
+
+.mapa-legenda div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    margin-bottom: 0.6rem;
+
+    font-size: 0.9rem;
+}
+
+.legenda-ponto {
+    width: 13px;
+
+    height: 13px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+
+    border: 2px solid white;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.legenda-ponto.sem-vitimas {
+    background-color: #718096;
+}
+
+.legenda-ponto.leve {
+    background-color: #D69E2E;
+}
+
+.legenda-ponto.grave {
+    background-color: #DD6B20;
+}
+
+.legenda-ponto.fatal {
+    background-color: #C53030;
+}
+
+
+/* =========================================================
+   MAPA LEAFLET
+   ========================================================= */
+
+.mapa-container {
+    flex: 1;
+
+    min-height: 650px;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    border: 1px solid #e2e8f0;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+    .mapa-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .mapa-layout {
+        flex-direction: column;
+    }
+
+    .mapa-filtros {
+        width: 100%;
+    }
+
+    .mapa-container {
+        min-height: 550px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .mapa-section {
+        padding: 1rem;
+    }
+
+    .mapa-main {
+        padding: 1rem;
+    }
+
+    .mapa-container {
+        min-height: 450px;
+    }
+
+}
